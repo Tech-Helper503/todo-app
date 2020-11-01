@@ -4,7 +4,9 @@
   "description": "Hey! A Todo APP!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "start": "snowpack dev",
+    "build": "snowpack build"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/Tech-Helper503/todo-app/issues"
   },
-  "homepage": "https://github.com/Tech-Helper503/todo-app#readme"
+  "homepage": "https://github.com/Tech-Helper503/todo-app#readme",
+  "devDependencies": {
+    "@snowpack/plugin-dotenv": "^2.0.4",
+    "@snowpack/plugin-react-refresh": "^2.3.5",
+    "@snowpack/plugin-typescript": "^1.1.0",
+    "@types/react": "^16.9.55",
+    "@types/react-dom": "^16.9.9",
+    "snowpack": "^2.16.0"
+  }
 }

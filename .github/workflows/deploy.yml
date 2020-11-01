@@ -1,0 +1,21 @@
+name: Deploy App to netlify 
+
+jobs:
+  steps:
+    - name: Node Setup
+      uses: actions/setup-node@v1
+      with:
+        node_version: 14.15.0
+
+    - name: Install Deps
+      run: npm install
+    
+    - name: Test
+      run: npm test
+    
+    - name: Build
+      run: npm run build
+
+    - name: Deploy
+      run: npm run deploy
+    

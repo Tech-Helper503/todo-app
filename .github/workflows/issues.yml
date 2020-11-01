@@ -1,0 +1,25 @@
+name: Issue
+
+on: [pull_reuest,issue]
+
+jobs:
+  new-issues:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: Welcome to the community
+        pr-message: Thank for contributing to the Todo APP
+  
+  old-issues:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/stale@v3.0.12
+    with:
+      repo-token: ${{ secrets.GITHUB_TOKEN }}
+      stale-issue-message: Thank you for improving the Todo APP but it's so old...
+      stale-pr-message: Thank you for contributing  to the Todo APP but it's so fightingly old...
+      close-issue-message: Ok you're issue is dead of old age
+      close-pr-message:  Ok you're pr is dead becuase of too much fighting age
+    
